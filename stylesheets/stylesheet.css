@@ -46,6 +46,49 @@ summary {
   display: block;
 }
 
+section:before {
+  width:auto;
+  margin-left:10em;
+  margin-right:10em;
+  padding:2em;
+  content:"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+  background-image: linear-gradient(to left, red, green);
+}
+hr.fancy-line { 
+    border: 0; 
+    height: 1px;
+    position: relative;
+    margin: 0.5em 0; /* Keep other elements away from pseudo elements*/
+}
+section:before {
+    top: -0.5em;
+    height: 1em;
+}
+section:after {
+    content:'';
+    height: 0.5em;   /* half the height of :before */
+    top: 1px;        /* height of hr*/
+}
+
+section:before, section:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+}
+
+section, section:before {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 75%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 75%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(75%,rgba(0,0,0,0)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 75%);
+}
+
+body, section:after {
+    background: #f4f4f4;
+}
+
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
@@ -428,7 +471,7 @@ th {
 
 /* LAYOUT STYLES */
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
@@ -450,7 +493,7 @@ a:hover {
 header {
   padding-top: 40px;
   padding-bottom: 40px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Open Sans', sans-serif;
   background: #2e7bcf url(../images/header-bg.jpg) 0 0 repeat-x;
   border-bottom: solid 1px #275da1;
 }
@@ -506,6 +549,16 @@ aside#sidebar {
   line-height: 1.3;
   background: transparent url(../images/sidebar-bg.jpg) 0 0 no-repeat;
 }
+aside#sidebar-left {
+  float: left;
+  width: 20px;
+  min-height: 504px;
+  padding-right: 20px;
+  font-size: 12px;
+  line-height: 1.3;
+  background: transparent url(../images/sidebar-bg.jpg) 0 0 no-repeat;
+}
+
 
 aside#sidebar p.repo-owner,
 aside#sidebar p.repo-owner a {
@@ -521,7 +574,7 @@ a.button {
   height: 58px;
   padding-top: 22px;
   padding-left: 68px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 23px;
   line-height: 1.2;
   color: #fff;
@@ -614,7 +667,7 @@ form {
 #main-content h1 {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 2.8em;
   font-weight: normal;
   color: #474747;
@@ -631,7 +684,7 @@ form {
 
 #main-content h2 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 22px;
   font-weight: bold;
   color: #474747;
@@ -647,23 +700,25 @@ form {
 #main-content h3 {
   margin-top: 24px;
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   font-weight: bold;
-  color: #474747;
+  color: #9ddcff;
   text-indent: 3px;
 }
 
 #main-content h3:before {
-  padding-right: 0.3em;
-  margin-left: -2em;
-  content: "///";
+  margin-top: -20em;
+  padding-bottom: 30.3em;
+    padding-right: 0.3em;
+  margin-left: -1.5em;
+  content: "____";
   color: #9ddcff;
 }
 
 #main-content h4 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   font-weight: bold;
   color: #474747;
@@ -679,7 +734,7 @@ h4:before {
 
 #main-content h5 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #474747;
   text-indent: 3px;
@@ -693,7 +748,7 @@ h5:before {
 
 #main-content h6 {
   margin-bottom: 8px;
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: .8em;
   color: #474747;
   text-indent: 3px;
